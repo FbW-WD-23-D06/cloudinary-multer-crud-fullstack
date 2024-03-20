@@ -1,13 +1,5 @@
 import { User } from "../models/user.js";
-// import "../utils/cloudinary.js";
-import { v2 as cloudinary } from "cloudinary";
-import "../config.js";
-
-cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET,
-});
+import { cloudinary } from "../utils/cloudinary.js";
 
 const addUser = async (req, res) => {
   console.log("test");
