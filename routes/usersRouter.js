@@ -6,10 +6,11 @@ import {
   getUser,
   getUsers,
 } from "../controllers/userController.js";
+import { upload } from "../utils/multer.js";
 
 const router = express.Router();
 
-router.route("/").get(getUsers).post(addUser);
+router.route("/").get(getUsers).post(upload.single("image"), addUser);
 
 router.route("/:id").delete(deleteUser).put(editUser).get(getUser);
 

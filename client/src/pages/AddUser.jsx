@@ -21,7 +21,6 @@ function AddUser() {
       let formData = new FormData();
       formData.append("image", data.image);
       formData.append("name", data.name);
-      console.log(formData);
       const res = await fetch(`http://localhost:8888/users`, {
         method: "POST",
         body: formData,
